@@ -9,8 +9,8 @@ class Event(models.Model):
         ('4', 'Ultra Mega Hiper Urgente')
     )
 
-    date = models.DataField()
-    event = models.CharField(max_length=100)
+    date = models.DataField(max_length=100)
+    event = models.CharField(max_length=1)
     priority = models.CharField(max_length=1, choices=priorities_list)
 
     def __str__(self):
