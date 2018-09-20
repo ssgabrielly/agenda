@@ -3,6 +3,8 @@ from django.utils import timezone
 from libgravatar import Gravatar
 
 class Event(models.Model):
+    """Classe contendo o evento propriamente dito, sua data, descrição
+    e também prioridade."""
     priorities_list = (
         ('0', 'Sem prioridade'),
         ('1', 'Normal'),
@@ -16,9 +18,10 @@ class Event(models.Model):
     priority = models.CharField(max_length=1, choices=priorities_list)
 
     class Meta:
-        ordering = ('-date', '-priority', 'event')
+        ordering = ('-date', '-priority', 'event',)
 
     def number_of_comments(self):
+        """Retorna a quantidade de comentários dentro de um evento."""
         return self.comment_event.count()
 
     def __str__(self):
@@ -26,7 +29,7 @@ class Event(models.Model):
 
 
 class Comment(models.Model):
-    """Comentários efetuados em um determinado evento."""
+    """Comentário efetuado em um determinado evento."""
 
     author = models.CharField(max_length=80)
     email = models.EmailField()
