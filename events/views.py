@@ -4,7 +4,7 @@ from django.utils.timezone import localdate
 from django.core.paginator import Paginator, InvalidPage
 from django.http import HttpResponse
 from django.views.defaults import bad_request, server_error
-form .forms import EventForm, CommentForm
+from .forms import EventForm, CommentForm
 from datetime import datetime, timedelta
 
 ITEMS_PER_PAGE = 5
