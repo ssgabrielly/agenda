@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Event, Comment
-from django.utils.timezone import localdate
 from django.core.paginator import Paginator, InvalidPage
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.timezone import localdate
 from django.views.defaults import bad_request, server_error
+from .models import Event, Comment
 from .forms import EventForm, CommentForm
 from datetime import datetime, timedelta
 
