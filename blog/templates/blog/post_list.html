@@ -4,8 +4,7 @@
         <div class="post">
             <div class="date">
                 <p>
-                    published: {{ post.published_date }}<a href="{% url 'post_edit' pk=post.pk %}">
-                    Editar</a>
+                    published: {{ post.published_date }}<a href="{% url 'post_edit' pk=post.pk %}">Editar</a>
                 </p>
             </div>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
