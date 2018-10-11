@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.timezone import localdate
 from django.views.defaults import bad_request, server_error
-from .models import Event, Comment
-from .forms import EventForm, CommentForm
+from .models import Event, Comment, Cadastro
+from .forms import EventForm, CommentForm, CadastroForm
 
 from datetime import datetime, timedelta
 
@@ -127,3 +127,34 @@ def show(request, id: int):
             'today': localdate(),
     }
     return render(request, 'show.html', context)
+
+def cad_list(request):
+    cads = Cadastro.objects.all()
+    return render(request, 'cad_list.html', {'cads': cads})
+
+def cad_detail(request, pk):
+    cad = get_object_or_404(Cadastro, pk=pk)
+    return render(request, 'cad_detail.html', {'cad': cad})
+
+def cad_new(request):
+    if request.method == 'POST':
+        form = CadastroForm(request.POST)
+        if form.is_valid():
+            cad = form.save(commit=False)
+            cad.save()
+            return redirect('cad_detail', pk=cad.pk)
+    else:
+        form = CadastroForm()
+    return render(request, 'cad_edit.html', {'form': form})
+
+def cad_edit(request, pk):
+    cad = get_object_or_404(Cadastro, pk=pk)
+    if request.method == 'POST':
+        form = CadastroForm(request.POST, instance=cad)
+        if form.is_valid():
+            cad = form.save(commit=False)
+            cad.save()
+            return redirect('cad_detail', pk=cad.pk)
+    else:
+        form = CadastroForm(instance=cad)
+    return render(request, 'cad_edit.html', {'form': form})

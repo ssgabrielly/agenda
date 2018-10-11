@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for cad in cads %}
+        <div class="post">
+            <h1><a href="{% url 'cad_detail' pk=cad.pk %}">{{ cad.nome }}</a></h1>
+        </div>
+    {% endfor %}
+{% endblock %}

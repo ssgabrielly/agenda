@@ -44,3 +44,28 @@ class Comment(models.Model):
 
     def __str__(self):
         return "{} comentou em {:%c}".format(self.author, self.commented)
+
+class Cadastro(models.Model):
+    sexo_list = (
+        ('0', 'Feminino'),
+        ('1', 'Masculino'),
+    )
+
+    cor_list = (
+        ('0', 'Branco'),
+        ('1', 'Pardo'),
+        ('2', 'Negro'),
+        ('3', 'Amarelo'),
+    )
+
+
+    nome = models.CharField(max_length=100)
+    endereço = models.CharField(max_length=100)
+    cidade = models.CharField(max_length=100)
+    cep = models.CharField(max_length=100)
+    estado = models.CharField(max_length=100)
+    sexo = models.CharField(max_length=1, choices=sexo_list)
+    cor = models.CharField(max_length=1, choices=cor_list)
+
+    def __str__(self):
+        return self.nome
