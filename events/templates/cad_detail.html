@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="post">
+        <a href="{% url 'cad_edit' pk=cad.pk %}"></a>
+        <h2>Nome: {{ cad.nome }}</h2>
+        <h2>Endereço: {{ cad.endereço }}</h2>
+        <h2>Cidade: {{ cad.cidade }}</h2>
+        <h2>CEP: {{ cad.cep }}</h2>
+        <h2>Estado: {{ cad.estado }}</h2>
+        <h2>Sexo: {{ cad.sexo }}</h2>
+        <h2>Etnia: {{ cad.cor }}</h2>
+    </div>
+{% endblock %}
