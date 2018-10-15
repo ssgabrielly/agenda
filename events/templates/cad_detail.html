@@ -2,6 +2,7 @@
 {% block content %}
     <div class="post">
         <a href="{% url 'cad_edit' pk=cad.pk %}"></a>
+<<<<<<< HEAD
         <h2>Nome: {{ cad.nome }}</h2>
         <h2>Endereço: {{ cad.endereço }}</h2>
         <h2>Cidade: {{ cad.cidade }}</h2>
@@ -9,5 +10,14 @@
         <h2>Estado: {{ cad.estado }}</h2>
         <h2>Sexo: {{ cad.sexo }}</h2>
         <h2>Etnia: {{ cad.cor }}</h2>
+=======
+        <h1>{{ cad.nome }}</h1>
+        <h1>{{ cad.endereço }}</h1>
+        <h1>{{ cad.cidade }}</h1>
+        <h1>{{ cad.cep }}</h1>
+        <h1>{{ cad.estado }}</h1>
+        <h1>{{ cad.sexo }}</h1>
+        <h1>{{ cad.cor }}</h1>
+>>>>>>> b80004dd04612a665100894b1d72527fc95fdc8f
     </div>
 {% endblock %}

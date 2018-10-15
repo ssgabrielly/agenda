@@ -1,5 +1,9 @@
 Django==2.0.8
+<<<<<<< HEAD
 
 libgravatar==0.2.3
 
+=======
+libgravatar==0.2.3
+>>>>>>> b80004dd04612a665100894b1d72527fc95fdc8f
 pytz==2018.5
