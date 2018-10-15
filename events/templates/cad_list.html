@@ -3,10 +3,7 @@
     {% for cad in cads %}
         <div class="post">
             <h1><a href="{% url 'cad_detail' pk=cad.pk %}">{{ cad.nome }}</a></h1>
-<<<<<<< HEAD
             <a href="{% url 'cad_edit' pk=cad.pk %}">Editar</a>
-=======
->>>>>>> b80004dd04612a665100894b1d72527fc95fdc8f
         </div>
     {% endfor %}
 {% endblock %}
